@@ -43,6 +43,7 @@ if [ -z $1 ]; then
 	gcc gccarch.c -o gccarch
 	if [ -f gccarch ]; then
 		P64BITS=`./gccarch`
+		./gccarch > bits.txt
 		if [ "$P64BITS" == "1" ]; then
 			DIR="64bits"
 		fi
