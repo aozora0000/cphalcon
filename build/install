@@ -38,18 +38,7 @@ fi
 rm -f t.t t.c t
 
 #Check processor architecture
-if [ -z $1 ]; then
-	DIR="32bits"
-	gcc gccarch.c -o gccarch > result.txt
-	if [ -f gccarch ]; then
-		./gccarch > bits.txt
-		if [ "$P64BITS" == "1" ]; then
-			DIR="64bits"
-		fi
-	fi
-else
-	DIR=$1
-fi
+DIR="64bit"
 
 #Move to specified architecture
 cd $DIR
